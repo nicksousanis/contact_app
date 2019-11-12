@@ -24,7 +24,7 @@ class Api::ContactsController < ApplicationController
     @contact = Contact.find_by(id: params["id"])
     @contact.first_name = params["first_name"] || @contact.first_name
     @contact.last_name = params["last_name"] || @contact.last_name
-    @contact.email = params["last_name"] || @contact.email
+    @contact.email = params["email"] || @contact.email
     @contact.phone_number = params["phone_number"] || @contact.phone_number
     @contact.save
     render "show.json.jb"
